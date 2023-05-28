@@ -53,7 +53,7 @@ function Data({onLogout}) {
         getTable();
         if(active === 1){
             onLogout();
-            navigate("/login");
+            navigate("/List/login");
         }
     },[active,check,success,cleared]);
 

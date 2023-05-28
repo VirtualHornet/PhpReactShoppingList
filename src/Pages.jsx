@@ -27,10 +27,10 @@ function Pages (){
 
     return(
         <Routes>
-            <Route path="/" element={<Navigate replace to='/login' />}/>
-            <Route path="/:id" element={loggedIn?<Data onLogout={handleLogout}/>:<Navigate replace to='/login' />}/> 
-            <Route path="/login" element={loggedIn ? <Navigate replace to='/:id' /> : <Login onLogin={handleLogin} />}/>
-            <Route path="/registration" element={loggedIn ?<Navigate replace to='/:id' />: <Sign onLogin={handleLogin} />}/>
+            <Route path="/" element={<Navigate replace to='/List/login' />}/>
+            <Route path="/List/:id" element={loggedIn?<Data onLogout={handleLogout}/>:<Navigate replace to='/login' />}/> 
+            <Route path="/List/login" element={loggedIn ? <Navigate replace to='/:id' /> : <Login onLogin={handleLogin} />}/>
+            <Route path="/List/registration" element={loggedIn ?<Navigate replace to='/:id' />: <Sign onLogin={handleLogin} />}/>
         </Routes>
     )
 }

@@ -41,7 +41,7 @@ function Sign (){
         <Wrapper>   
         <Form onSubmit={handlerSubmit}> 
         <h2>Sign up </h2>
-        {response===1?<p>You signed up successfully <Link to="/login">Click here to login</Link></p>:response===0?<p>Email address or username is already registered</p>:""}
+        {response===1?<p>You signed up successfully <Link to="/List/login">Click here to login</Link></p>:response===0?<p>Email address or username is already registered</p>:""}
             <label>
                 <p>Name:</p>
                 <input type="text" value={name} onChange={(e)=> setName(e.target.value)} placeholder="Enter your username" required/>
