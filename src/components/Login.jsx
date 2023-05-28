@@ -23,10 +23,10 @@ function Login({onLogin}){
         const formData = new FormData();
         formData.append('user', user) ;
         formData.append('pass', pass);
-        const api = await fetch("http://reactphpshoppinglist.rf.gd/login.php",{
+        const api = await fetch("https://bootstrapphpshoppinglist.000webhostapp.com/login.php",{
             method: 'POST',
-            body:formData
-        })
+            body: formData
+        });
         const data = await api.json();
         setLogin(data);
         console.log(data)

@@ -21,7 +21,7 @@ function Data({onLogout}) {
         formData.append('id',id);
         formData.append('checked',check);
 
-        const api = await fetch('http://reactphpshoppinglist.rf.gd/check.php',{
+        const api = await fetch('https://bootstrapphpshoppinglist.000webhostapp.com/check.php',{
             method: 'POST',
             body: formData
         });
@@ -58,7 +58,7 @@ function Data({onLogout}) {
     },[active,check,success,cleared]);
 
     const api = async ()=>{
-        const getApi = await fetch('http://reactphpshoppinglist.rf.gd/');
+        const getApi = await fetch('https://bootstrapphpshoppinglist.000webhostapp.com/');
         const getdata = await getApi.json();
         console.log(getdata);
         setData(getdata);
@@ -67,7 +67,7 @@ function Data({onLogout}) {
     const logOut = async ()=>{
         const formData = new FormData();
         formData.append('id',param.id);
-        const api = await fetch('http://reactphpshoppinglist.rf.gd/logout.php',{
+        const api = await fetch('https://bootstrapphpshoppinglist.000webhostapp.com/logout.php',{
             method: 'POST',
             body: formData
         });
@@ -77,7 +77,7 @@ function Data({onLogout}) {
     }
 
     const getTable = async ()=>{
-        const api = await fetch('http://reactphpshoppinglist.rf.gd/list.php');
+        const api = await fetch('https://bootstrapphpshoppinglist.000webhostapp.com/list.php');
         const data = await api.json();
         console.log(data)
         setTable(data);
@@ -89,7 +89,7 @@ function Data({onLogout}) {
         const formData = new FormData();
         formData.append('item', product);
         formData.append('num',number);
-        const api = await fetch('http://reactphpshoppinglist.rf.gd/addToList.php',{
+        const api = await fetch('https://bootstrapphpshoppinglist.000webhostapp.com/addToList.php',{
             method: 'POST',
             body: formData
         });
@@ -99,7 +99,7 @@ function Data({onLogout}) {
     }
 
     const clearTable = async () =>{
-        const api = await fetch("http://reactphpshoppinglist.rf.gd/clearTable.php");
+        const api = await fetch("https://bootstrapphpshoppinglist.000webhostapp.com/clearTable.php");
         const data = await api.json();
         console.log(data);
         setCleard(data);
@@ -116,7 +116,7 @@ function Data({onLogout}) {
             {Object.values(data).map((item) => {
                 return(
                     <p key={item.id}>
-                        {(item.id === Number(param.id))?<h2>Welcome <strong>{item.name}</strong></h2>:""
+                        {(item.id === param.id)?<h2>Welcome <strong>{item.name}</strong></h2>:""
                         }
                     </p>
                 )
@@ -139,7 +139,7 @@ function Data({onLogout}) {
       <tbody>
         {(Object.keys(table).length>0)?Object.values(table).map(item=>{
             return(
-            <tr key={item.id} className={item.check?`check`:``} >
+            <tr key={item.id} className={(item.check=== '0')?``:`check`} >
                 <td>{item.num}</td>
                 <td>{item.product}</td>
                 <td className="dis">{item.date}</td>

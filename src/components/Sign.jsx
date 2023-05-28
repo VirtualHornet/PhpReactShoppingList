@@ -22,17 +22,8 @@ function Sign (){
         formData.append('pass', password);
 
 
-        fetch('http://reactphpshoppinglist.rf.gd/sign.php',{
+        fetch('https://bootstrapphpshoppinglist.000webhostapp.com/sign.php',{
             method: 'POST',
-            mode: "cors",
-            cache: 'no-cache',
-            credentials: "same-origin",
-            headers: {
-                "Content-Type": "application/json",  // sent request
-                "Accept":       "application/json"   // expected data sent back
-              },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
             body: formData
         })
         .then((response)=>response.json())
