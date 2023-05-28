@@ -13,7 +13,7 @@ function Login({onLogin}){
         Object.values(login).map((item)=>{
             if(item.num === 1){
                 onLogin();
-                navigate("/List/"+item.id);
+                navigate("/PhpReactShoppingList/"+item.id);
             }
         })
     },[login])
@@ -48,7 +48,7 @@ function Login({onLogin}){
             </label>
             <br/>
             <button type="submit">Submit</button>
-            <p><Link to="/List/registration">Click here to sign up</Link></p>
+            <p><Link to="/PhpReactShoppingList/registration">Click here to sign up</Link></p>
         </Form>
         <Footer/>
         </Wrapper>

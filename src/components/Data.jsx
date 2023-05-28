@@ -53,7 +53,7 @@ function Data({onLogout}) {
         getTable();
         if(active === 1){
             onLogout();
-            navigate("/List/login");
+            navigate("/PhpReactShoppingList/login");
         }
     },[active,check,success,cleared]);
 
