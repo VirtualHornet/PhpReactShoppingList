@@ -28,9 +28,9 @@ function Pages (){
     return(
         <Routes>
             <Route path="/" element={<Navigate replace to='/List/login' />}/>
-            <Route path="/List/:id" element={loggedIn?<Data onLogout={handleLogout}/>:<Navigate replace to='/login' />}/> 
-            <Route path="/List/login" element={loggedIn ? <Navigate replace to='/:id' /> : <Login onLogin={handleLogin} />}/>
-            <Route path="/List/registration" element={loggedIn ?<Navigate replace to='/:id' />: <Sign onLogin={handleLogin} />}/>
+            <Route path="/List/:id" element={loggedIn?<Data onLogout={handleLogout}/>:<Navigate replace to='/List/login' />}/> 
+            <Route path="/List/login" element={loggedIn ? <Navigate replace to='/List/:id' /> : <Login onLogin={handleLogin} />}/>
+            <Route path="/List/registration" element={loggedIn ?<Navigate replace to='/List/:id' />: <Sign onLogin={handleLogin} />}/>
         </Routes>
     )
 }
